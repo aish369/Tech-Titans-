@@ -5,28 +5,28 @@
 ### Team Name: [Tech Titans]
 
 
-### Team Members
+### Team Members 
 - Member 1: [Aiswarya Satheesan] - [College of Engineering Pathanapuram]
 - Member 2: [Surya N R] - [College of Engineering Pathanapuram]
 
 ### Hosted Project Link
-
+vercel.com/aiswarya-satheesan-projects/tech-titans
 
 ### Project Description
-[2-3 lines about what your project does]
+by providing emergency alert for hostelers
 
 ### The Problem statement
-[What ridiculous problem are you solving?]
+This website is for connecting the hostelers with wardon &college authorities.This website is used for if there is any emergency or if a person is ill so,by using this website there will be alert sent to the wardon &others & even this website is used.if wardon has to pass any emergency message or if wardon hasent taken the action then the alert will be pass to the college authorities.
 
 ### The Solution
-[How are you solving it? Keep it fun!]
+by using an alert message
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
+- html
+  -java
+- [css]
 - [Tools used]
 
 For Hardware:
