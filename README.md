@@ -10,7 +10,7 @@
 - Member 2: [Surya N R] - [College of Engineering Pathanapuram]
 
 ### Hosted Project Link
-vercel.com/aiswarya-satheesan-projects/tech-titans
+https://tech-titans-pqdw.vercel.app/
 
 ### Project Description
 by providing emergency alert for hostelers
