@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Connect - Campus Management System</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Login Form -->
+        <div class="login-container" id="loginForm">
+            <div class="login-header">
+                <h2>Hostel Connect</h2>
+                <p>Campus Management System</p>
+            </div>
+            <form id="login">
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-user-tag"></i>
+                    <select id="userType">
+                        <option value="student">Student</option>
+                        <option value="warden">Warden</option>
+                        <option value="authority">Authority</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+            </form>
+        </div>
+
+        <!-- Dashboard -->
+        <div class="dashboard hidden" id="dashboard">
+            <nav>
+                <div class="nav-left">
+                    <div class="logo">Hostel Connect</div>
+                </div>
+                <div class="nav-right">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">0</span>
+                    </div>
+                    <div class="user-info">
+                        <span id="userName"></span>
+                        <button id="logoutBtn"><i class="fas fa-sign-out-alt"></i></button>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="main-content">
+                <div class="sidebar">
+                    <button class="new-complaint-btn">
+                        <i class="fas fa-plus"></i> New Complaint
+                    </button>
+                    <ul class="menu">
+                        <li>
+                            <a href="#" class="active">
+                                <i class="fas fa-home"></i> Dashboard
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-clipboard-list"></i> Complaints
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-bell"></i> Notifications
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-user"></i> Profile
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-cog"></i> Settings
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="content">
+                    <div class="dashboard-stats">
+                        <div class="stat-card">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <h3>Active Complaints</h3>
+                            <p id="activeComplaints">0</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-check-circle"></i>
+                            <h3>Resolved</h3>
+                            <p id="resolvedComplaints">0</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-clock"></i>
+                            <h3>Pending</h3>
+                            <p id="pendingComplaints">0</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-arrow-up"></i>
+                            <h3>Escalated</h3>
+                            <p id="escalatedComplaints">0</p>
+                        </div>
+                    </div>
+
+                    <div class="complaints-section">
+                        <div class="section-header">
+                            <h3>Recent Complaints</h3>
+                            <div class="filters">
+                                <select id="statusFilter">
+                                    <option value="all">All Status</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="inProgress">In Progress</option>
+                                    <option value="resolved">Resolved</option>
+                                </select>
+                                <select id="typeFilter">
+                                    <option value="all">All Types</option>
+                                    <option value="emergency">Emergency</option>
+                                    <option value="medical">Medical</option>
+                                    <option value="maintenance">Maintenance</option>
+                                    <option value="general">General</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="complaintsList" class="complaints-grid"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Complaint Modal -->
+        <div class="modal hidden" id="complaintModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3><i class="fas fa-plus-circle"></i> New Complaint</h3>
+                    <span class="close">&times;</span>
+                </div>
+                <form id="complaintForm">
+                    <div class="input-group">
+                        <i class="fas fa-tag"></i>
+                        <select id="complaintType" required>
+                            <option value="">Select Type</option>
+                            <option value="emergency">Emergency</option>
+                            <option value="medical">Medical</option>
+                            <option value="maintenance">Maintenance</option>
+                            <option value="general">General</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-heading"></i>
+                        <input type="text" placeholder="Title" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-align-left"></i>
+                        <textarea placeholder="Description" required></textarea>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-camera"></i>
+                        <input type="file" accept="image/*" id="complaintImage">
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn-secondary" id="cancelComplaint">Cancel</button>
+                        <button type="submit" class="btn-primary">Submit Complaint</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html> 
