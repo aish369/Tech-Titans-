@@ -1,17 +1,16 @@
-# [Project Name] 🎯
+# [HOSTEL CONNECT] 🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: [Tech Titans]
 
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Member 1: [Aiswarya Satheesan] - [College of Engineering Pathanapuram]
+- Member 2: [Surya N R] - [College of Engineering Pathanapuram]
 
 ### Hosted Project Link
-[mention your project hosted project link here]
+
 
 ### Project Description
 [2-3 lines about what your project does]
